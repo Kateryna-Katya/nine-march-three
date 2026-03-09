@@ -18,178 +18,159 @@ $domainTitle = ucwords(str_replace('-', ' ', $domainSlug));
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?= $domainTitle ?> — Экспертный консалтинг и стратегии роста
+        <?= $domainTitle ?> — Карьерный апгрейд и стратегии роста
     </title>
-<link rel="icon"
-    href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23635BFF;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%230A2540;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M4 16H9L12 6L18 26L21 16H28' stroke='url(%23grad)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='28' cy='16' r='3' fill='%23635BFF' /%3E%3C/svg%3E"
-    type="image/svg+xml">
+
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22none%22 stroke=%22%23e63946%22 stroke-width=%228%22/><path d=%22M30 70 L50 30 L70 70%22 fill=%22none%22 stroke=%22%23800000%22 stroke-width=%228%22 stroke-linecap=%22round%22/></svg>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Manrope:wght@500;800&display=swap"
-        rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header class="header">
+    <header class="header" id="header">
         <div class="container header__container">
             <a href="./#hero" class="logo">
-                <span class="logo__icon"></span>
+                <span class="logo__dot"></span>
                 <span class="logo__text">
                     <?= $domainTitle ?>
                 </span>
             </a>
 
-            <nav class="nav">
+            <nav class="nav" id="nav">
                 <ul class="nav__list">
                     <li><a href="./#hero" class="nav__link">Главная</a></li>
                     <li><a href="./#strategies" class="nav__link">Стратегии</a></li>
                     <li><a href="./#expertise" class="nav__link">Экспертиза</a></li>
-                    <li><a href="./#insights" class="nav__link">Инсайты</a></li>
-                    <li><a href="./#reviews" class="nav__link">Отзывы</a></li>
+                    <li><a href="./#cases" class="nav__link">Кейсы</a></li>
+                    <li><a href="./#blog" class="nav__link">Блог</a></li>
                 </ul>
             </nav>
 
-            <a href="./#contact" class="btn btn--outline header__cta">Связаться</a>
-
-            <button class="burger" aria-label="Menu">
-                <span></span>
-            </button>
+            <div class="header__actions">
+                <a href="./#contact" class="btn btn--outline btn--sm">Связаться</a>
+                <button class="burger" id="burger" aria-label="Menu">
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
-
 <main>
     <section class="pages">
         <div class="container">
             <h1>Политика возврата средств</h1>
             
+            <p>
+                Мы стремимся к тому, чтобы каждая стратегия роста, разработанная на платформе <strong><?= $domainTitle ?></strong>, приносила реальный результат. Однако, если по каким-то причинам вы решили переосмыслить подход к обучению, ниже приведены условия возврата средств.
+            </p>
+
             <h2>Условия для оформления возврата</h2>
             <p>
-                Вы можете претендовать на полный или частичный возврат средств в
-                следующих ситуациях:
+                Вы можете претендовать на возврат средств в рамках экспертной поддержки в следующих ситуациях:
             </p>
             <ul>
                 <li>
-                    <strong>Несоответствие программы описанию:</strong> Если содержание
-                    предоставленной консультации или экспертного материала существенно отличается от программы,
-                    заявленной на сайте <strong><?= $domainTitle ?></strong> на момент покупки.
+                    <strong>Несоответствие программы описанию:</strong> Если содержание предоставленной консультации или экспертного материала существенно отличается от программы, заявленной на сайте <strong><?= $domainTitle ?></strong> на момент покупки.
                 </li>
                 <li>
-                    <strong>Технические неисправности с нашей стороны:</strong> При
-                    возникновении критических технических проблем на платформе
-                    <strong><?= $fullDomain ?></strong>, которые делают доступ к материалам или сессиям невозможным и не были
-                    устранены нашей командой в разумные сроки.
+                    <strong>Технические неисправности:</strong> При возникновении критических проблем в работе нашей цифровой инфраструктуры на <strong><?= $fullDomain ?></strong>, которые делают доступ к AI-инструментам или сессиям невозможным.
                 </li>
                 <li>
-                    <strong>Отказ в течение «периода охлаждения»:</strong> Если вы
-                    решили отказаться от участия в программе в течение 14 (четырнадцати) календарных
-                    дней с момента оплаты, при условии, что вы еще не получили доступ
-                    к значительному объему материалов (см. раздел «Исключения»).
+                    <strong>«Период охлаждения»:</strong> Если вы решили отказаться от участия в программе в течение 14 календарных дней с момента оплаты, при условии, что вы еще не получили доступ к значительному объему методологий (см. «Исключения»).
                 </li>
             </ul>
 
             <h2>Процедура запроса на возврат</h2>
             <p>
-                Чтобы инициировать процедуру возврата на платформе <strong><?= $domainTitle ?></strong>, пожалуйста, выполните
-                следующие шаги:
+                Чтобы инициировать процедуру на платформе <strong><?= $domainTitle ?></strong>, выполните следующие шаги:
             </p>
             <ol class="custom-list">
                 <li>
-                    Составьте письмо и отправьте его на наш официальный email:
-                    <a href="mailto:hello@<?= $fullDomain ?>">hello@<?= $fullDomain ?></a>.
+                    Отправьте письмо на наш email для экспертной поддержки:
+                    <a href="mailto:support@<?= $fullDomain ?>">support@<?= $fullDomain ?></a>.
                 </li>
                 <li>
-                    В теме письма обязательно укажите: «Запрос на возврат средств».
+                    В теме письма укажите: «Запрос на возврат средств — <?= $domainTitle ?>».
                 </li>
                 <li>
-                    В теле письма предоставьте полную информацию: ваше имя и фамилию,
-                    email, который использовался при регистрации, и точное название выбранной программы.
+                    Укажите ваши данные: имя, фамилию, email регистрации и точное название выбранной стратегии роста.
                 </li>
                 <li>
-                    Четко и подробно опишите причину, по которой вы запрашиваете
-                    возврат, со ссылкой на один из пунктов наших условий.
+                    Опишите причину запроса, чтобы мы могли улучшить наши технологии нового поколения.
                 </li>
                 <li>
-                    После получения письма наша служба поддержки рассмотрит ваш запрос
-                    и свяжется с вами для предоставления дальнейших инструкций в течение 3-х рабочих дней.
+                    Наша команда рассмотрит запрос и свяжется с вами в течение 3-х рабочих дней.
                 </li>
             </ol>
 
             <h2>Сроки и способ возврата</h2>
             <p>
-                После одобрения вашего запроса, возврат денежных средств будет
-                произведен в течение 7–14 рабочих дней. Средства будут возвращены
-                тем же способом, которым была совершена оплата. Обратите внимание, что фактический срок зачисления
-                может зависеть от регламента работы вашего банка или платежной системы в <strong>Германии</strong> или стране вашего пребывания.
+                После одобрения запроса возврат будет произведен в течение 7–14 рабочих дней тем же способом, которым была совершена оплата. Обратите внимание, что фактический срок зачисления зависит от регламента вашего банка во <strong>Франции</strong> или другой стране ЕС.
             </p>
 
             <h2>Исключения и ограничения</h2>
-            <p>Возврат средств не может быть осуществлен, если:</p>
+            <p>Возврат не осуществляется, если:</p>
             <ul>
                 <li>
-                    Запрос подан по истечении 14 календарных дней с момента оплаты.
+                    Запрос подан по истечении 14 дней с момента оплаты.
                 </li>
                 <li>
-                    Вы уже изучили, просмотрели или скачали более 50% материалов программы, независимо
-                    от времени, прошедшего с момента покупки.
+                    Вы уже изучили или скачали более 50% материалов программы, применимых уже сегодня.
                 </li>
                 <li>
-                    Причиной невозможности пройти обучение являются технические
-                    проблемы на стороне пользователя (например, проблемы с интернет-соединением или ПО).
+                    Причиной являются технические проблемы на стороне пользователя (проблемы с интернет-соединением в регионе или ПО).
                 </li>
                 <li>
-                    Были нарушены другие условия Пользовательского соглашения <strong><?= $domainTitle ?></strong> с вашей
-                    стороны.
+                    Были нарушены правила платформы <strong><?= $domainTitle ?></strong>.
                 </li>
             </ul>
 
             <h2>Изменения в политике</h2>
             <p>
-                <strong><?= $domainTitle ?></strong> оставляет за собой право вносить изменения в настоящую
-                Политику возврата. Актуальная версия всегда доступна на этой
-                странице <strong><?= $fullDomain ?></strong>.
+                <strong><?= $domainTitle ?></strong> оставляет за собой право обновлять настоящую Политику, чтобы соответствовать изменениям в законодательстве Франции. Актуальная версия всегда доступна на <strong><?= $fullDomain ?></strong>.
             </p>
 
             <h2>Свяжитесь с нами</h2>
             <p>
-                По всем вопросам, связанным с возвратом средств или условиями
-                консультаций, пожалуйста, обращайтесь в нашу службу поддержки:
+                По всем вопросам, связанным с условиями консультаций, пожалуйста, обращайтесь в нашу службу поддержки:
                 <br><br>
-                Email: <a href="mailto:hello@<?= $fullDomain ?>">hello@<?= $fullDomain ?></a><br>
-                Телефон: <a href="tel:+390697639457">+390697639457</a>
+                Email: <a href="mailto:support@<?= $fullDomain ?>">support@<?= $fullDomain ?></a><br>
+                Телефон: <a href="tel:+33189480463">+33 1 89 48 04 63</a>
             </p>
         </div>
     </section>
 </main>
 
-
-
-
-     <footer class="footer">
+    <footer class="footer">
         <div class="container footer__grid">
             <div class="footer__col">
                 <a href="./#hero" class="logo footer__logo">
-                    <span class="logo__icon"></span>
+                    <span class="logo__dot"></span>
                     <span class="logo__text">
                         <?= $domainTitle ?>
                     </span>
                 </a>
-                <p class="footer__description">Технологии нового поколения для вашего бизнеса. Переосмыслите подход к
-                    развитию вместе с экспертной поддержкой.</p>
+                <p class="footer__description">
+                    Технологии нового поколения для вашего профессионального превосходства. Платформа года в сфере
+                    карьерного консалтинга.
+                </p>
             </div>
 
             <div class="footer__col">
                 <h4 class="footer__title">Навигация</h4>
                 <ul class="footer__links">
                     <li><a href="./#hero">Главная</a></li>
-                    <li><a href="./#strategies">Стратегии</a></li>
-                    <li><a href="./#expertise">Экспертиза</a></li>
-                    <li><a href="./#insights">Инсайты</a></li>
+                    <li><a href="./#strategies">Стратегии роста</a></li>
+                    <li><a href="./#expertise">Методология</a></li>
+                    <li><a href="./#blog">Статьи и медиа</a></li>
                 </ul>
             </div>
 
@@ -209,45 +190,42 @@ $domainTitle = ucwords(str_replace('-', ' ', $domainSlug));
             <div class="footer__col">
                 <h4 class="footer__title">Контакты</h4>
                 <ul class="footer__contact">
-                    <li><i data-lucide="phone" class="icon-sm"></i> +390697639457</li>
-                    <li><i data-lucide="mail" class="icon-sm"></i> hello@
-                        <?= $fullDomain ?>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+33189480463">+33 1 89 48 04 63</a>
                     </li>
-                    <li><i data-lucide="map-pin" class="icon-sm"></i> Kurfürstendamm 21, 10719 Berlin, Germany</li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:hello@<?= $fullDomain ?>">hello@
+                            <?= $fullDomain ?>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>24 Rue du Quatre Septembre, 75002 Paris, France</span>
+                    </li>
                 </ul>
             </div>
         </div>
-        <div class="container footer__bottom">
-            <p>&copy; 2026
+        <div class="footer__bottom container">
+            <p>&copy;
+              2026
                 <?= $domainTitle ?>. Все права защищены. Предложение активно только в странах ЕС.
             </p>
         </div>
     </footer>
-<div class="mobile-menu">
-    <button class="mobile-menu__close"><i data-lucide="x"></i></button>
-    <ul class="mobile-menu__list">
-        <li><a href="./#hero" class="mobile-menu__link">Главная</a></li>
-        <li><a href="./#strategies" class="mobile-menu__link">Стратегии</a></li>
-        <li><a href="./#expertise" class="mobile-menu__link">Экспертиза</a></li>
-        <li><a href="./#insights" class="mobile-menu__link">Инсайты</a></li>
-        <li><a href="./#reviews" class="mobile-menu__link">Отзывы</a></li>
-        <li><a href="./#contact" class="btn btn--primary">Связаться</a></li>
-    </ul>
-</div>
-
-<div id="cookie-popup" class="cookie-popup">
+<div class="cookie-popup" id="cookiePopup">
     <div class="cookie-popup__content">
         <p>Этот сайт использует cookies для улучшения работы. Подробнее — в нашей <a href="./cookies.php">Cookie
                 политике</a>.</p>
-        <button id="cookie-accept" class="btn btn--accent-sm">Принять</button>
+        <button class="btn btn--primary btn--sm" id="acceptCookies">Принять</button>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script type="module" src="script.js"></script>    
- 
-    
+
+<div class="menu-overlay" id="menuOverlay"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
